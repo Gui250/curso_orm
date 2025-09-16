@@ -4,6 +4,8 @@ import { UserController } from "../models/user-controller.js";
 const userRoutes = Router();
 const userController = new UserController();
 
-userRoutes.post("/", userController.create.bind(userController));
+userRoutes.get("/", userController.index);
+userRoutes.get("/:id", userController.show);
+userRoutes.post("/", userController.create);
 
 export default userRoutes;
